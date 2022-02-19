@@ -1,0 +1,27 @@
+@(request: play.mvc.Http.Request)
+<html>
+<style>
+th,td  {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid black;
+}
+</style>
+<head>
+    <title>Gitterific - User Repository</title>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/userrepo.js")'></script>  
+</head>
+<body data-ws-url="@routes.HomeController.wsur.webSocketURL(request)">
+<center><h2 class="center">Repositories</h2></center>
+	<center>
+	    <table id="repo">
+	         <tr>
+			    <th>User</th>
+			    <th>Id</th>
+			    <th>Repository</th>
+			 </tr>
+	   </table>
+	</center>
+</body>
+</html>

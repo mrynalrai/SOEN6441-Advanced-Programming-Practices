@@ -1,0 +1,67 @@
+@(request: play.mvc.Http.Request, username: String, repository: String)
+<!DOCTYPE html>
+
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+    <title>Gitterific</title>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/repositoryprofile.js")'></script>  
+</head>
+<body data-ws-url="@routes.HomeController.wsRepositoryProfile.webSocketURL(request)">
+<center><h2 class="center">Repository Profile</h2></center>
+<div>
+<center>
+<table id="repoprofile">
+            	<tr> 
+            		<th>User Name </th>
+					<th>Repository Name</th> 
+                    <th>Node ID</th> 
+                    <th>Avatar URL</th>  
+                    <th>Open Issues Count</th> 
+               </tr> 
+            	                                                                           
+</table>
+</center>
+</div>
+<div>
+<center>
+<h2>Latest 20 Repository Issues</h2>
+<h2> Issues Statistics : <a href=/search/@username/@repository/issues target="_blank">Link</a></h2></center>
+<center><table id="repository_issues">
+	         <tr>
+			    <th>Repository Issue</th>
+			    <th>Repository Issue Number</th>
+			    <th>Issue State</th>
+			    <th>Issue Created At</th>
+			    <th>Issue Last Updated At</th>
+             </tr>
+</table>
+</center>
+</center>
+</div>
+<div>
+<center>
+<h2 class="center">Collaborators</h2>
+	    <table id="repository_collab">
+	         <tr>
+			    <th>Login</th>
+			    <th>ID</th>
+			    <th>Role Name</th>
+			    <th>User Url</th>
+             </tr>
+         </table>
+</center>
+</div>
+<div>
+<center><h2 class="center">Repository Commit Statistics :  <a  href="/search/@username/@repository/commits" style="text-decoration: none;" target="_blank" > Link </a> </h2></center>
+</center>
+<center><h2 class="center"><a  href="/" style="text-decoration: none;" target="_blank" > GOTO HOME </a> </h2></center>
+</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@(request: play.mvc.Http.Request, user:String, repository:String)
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+
+<head>
+    <title>Repository Issues</title>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/issues.js")'></script>  
+</head>
+
+<body data-ws-url="@routes.HomeController.wsIssue.webSocketURL(request)"> 
+
+<center><h1 id='title'> </h1></center>
+<h3 id='IssueList'></h3>    
+  
+    <div>
+    	<ul id='titleList'>
+    	</ul> 
+    </div>
+    <div>    
+    <h3 id='titleStat'> </h3>    
+    <table id="issueStat">
+            	<tr> 
+            		<th> </th>
+					<th> </th>  
+               </tr> 	                                                                           
+	</table>   
+</div>
+</body>
+
+</html>
+
